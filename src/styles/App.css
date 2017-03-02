@@ -1,21 +1,67 @@
-/* Base Application Styles */
-body {
-  color: #fff;
+/* Stiziles */
+
+html, body {
+  width: 100%;height: 100%;
   background: #222;
 }
 
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
-  display: block;
+/* main */
+
+.app {
+  width: 100%;
+  height: 100%;
+  background: #ddd;
+  color: #fff;
 }
 
-.index .notice {
-  margin: 20px auto;
-  padding: 15px 0;
+
+/* stage start */
+
+
+.stage{
+  position: relative;
+  width: 100%;height: 680px;
+  background-color: #000;
+}
+
+/* stage end */
+
+/* img start */
+.img-sec {
+  position: relative;
+  width: 100%;height: 100%;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+/* img end */
+
+/* controller start */
+.controller-nav{
+  position: absolute;
+  bottom: 30px;left: 0;
+  z-index: 101;
+  width: 100%;
   text-align: center;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  background: #666;
+}
+/* controller end */
+
+/* transitions */
+
+.fade-enter {
+  opacity: 0.01;
+  transition: opacity .5s ease-in;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+}
+
+.fade-leave {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
 }
