@@ -1,0 +1,180 @@
+/* Stiziles */
+
+html,
+body
+{
+    width: 100%;
+    height: 100%;
+
+    background: #222;
+}
+
+@bgColor:#ccc;
+/* main */
+
+.app
+{
+    width: 100%;
+    height: 100%;
+
+    color: #fff;
+    background: #ddd;
+}
+
+.stage
+{
+    position: relative;
+
+    width: 100%;
+    height: 680px;
+
+    background-color: #000;
+    box-shadow: 0 0 0 3px;
+}
+
+
+
+/* stage start */
+
+
+
+
+/* stage end */
+
+/* img start */
+.img-sec
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #ddd;
+    
+    
+}
+
+figcaption
+{
+    text-align: center;
+    
+}
+
+.img-title
+{
+    font-size: 16px;
+
+    margin-top: 20px;
+
+    color: #a7a0a3;
+}
+
+
+
+.img-figure
+{
+  position: absolute;
+  width: 320px;
+  height: 360px;
+  margin: 0;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #fff;
+  cursor: pointer;
+  transform-origin: 0 50% 0;
+  transform-style: preserve-3d;
+  transition: transform .6s ease-in-out, left .6s ease-in-out, top .6s ease-in-out;
+
+  &.is-inverse
+  {
+      transform: translate(320px) rotateY(180deg);
+  }
+
+}
+
+
+
+/* img end */
+
+/* controller start */
+.controller-nav
+{
+    position: absolute;
+    z-index: 101;
+    bottom: 30px;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+.controller-unit
+{
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+
+    cursor: pointer;
+    transition: transform .6s ease-in-out;
+    transform: scale(.6);
+    text-align: center;
+    vertical-align: middle;
+
+    border-radius: 50%;
+    background-color: #aaa;
+    &.is-center
+    {
+        transform: scale(1);
+
+        background: #888;
+        &::after
+        {
+            font-family: 'iconfont';
+            line-height: 30px;
+
+            content: '\e600';
+
+            color: #fff;
+        }
+        &.is-inverse
+        {
+            transform: rotateY(180deg);
+
+            background: #555;
+        }
+    }
+}
+
+
+/* controller end */
+
+/* transitions */
+
+.fade-enter
+{
+    transition: opacity .5s ease-in;
+
+    opacity: .01;
+}
+
+.fade-enter.fade-enter-active
+{
+    opacity: 1;
+}
+
+.fade-leave
+{
+    transition: opacity .5s ease-in;
+
+    opacity: 1;
+}
+
+.fade-leave.fade-leave-active
+{
+    opacity: .01;
+}
