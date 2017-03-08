@@ -160,20 +160,24 @@ class GalleryByReactApp extends React.Component {
 
     this.state = {
       imgsArrangeArr: [
-        //{
-        //  pos:{
-        //    left:'0',
-        //    top:'0'
-        //  },
-        //    rotate:0, //旋转角度
-        //isInverse:false //正反面
-        //isCenter:false 图片是否居中
-        //}
+        /*{
+         pos:{
+           left:'0',
+           top:'0'
+         },
+           rotate:0, //旋转角度
+        isInverse:false //正反面
+        isCenter:false 图片是否居中
+        }*/
       ]
     };
   }
 
-	//翻转图片的函数
+	/**
+	 * 图片反转函数
+	 * @param  {[type]} index [description]
+	 * @return {[type]}       [description]
+	 */
 	inverse(index) {
 		return () => {
 			let imgsArrangArr = this.state.imgsArrangeArr;
@@ -183,11 +187,12 @@ class GalleryByReactApp extends React.Component {
 			})
 		}
 	}
-	/*
-	*重新布局所有图片
-	*指定居中哪个图片
+	/**
+	 * 重新布局所有图片
+	 * 指定居中哪个图片
+	 * @param  {[type]} centerIndex [description]
+	 * @return {[type]}             [description]
 	 */
-	//重新布局所有图片
 	rearrange(centerIndex) {
 		let imgsArrangeArr = this.state.imgsArrangeArr,
 			Constant = this.Constant,
@@ -200,6 +205,9 @@ class GalleryByReactApp extends React.Component {
 			vPosRangeTopY = vPosRange.topY,
 			vPosRangeX = vPosRange.x,
 			imgsArrangTopArr = [],
+			/**
+			 * Math.floor是向下取整，Math.ceil()是向上取整
+			 */
 			topImgNum = Math.floor(Math.random() * 2), //取一个或者不取
 			topImgSpiceIndex = 0,
 			imgsArrangeCenterArr = imgsArrangeArr.splice(centerIndex, 1);
@@ -261,6 +269,13 @@ class GalleryByReactApp extends React.Component {
 			this.rearrange(index);
 		}
 	}
+
+	// 非ES6箭头函数写法
+	// center(index){
+	// 	return function() {
+	// 		this.rearrange(index);
+	// 	}.bind(this)
+	// }
 	
 	// the position is calculated after the image is loaded
 	componentDidMount() {
